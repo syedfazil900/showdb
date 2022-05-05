@@ -1,0 +1,25 @@
+.navbar {
+    background: #171111 no-repeat;
+}
+
+.nav-items .nav-link {
+    color: whitesmoke;
+
+}
+
+.navbar-toggler:focus {
+    box-shadow: none;
+}
+
+.fa-bars {
+    color: whitesmoke;
+    font-size: 1.5em;
+}
+
+#searchForm {
+    margin: 0;
+}
+
+form .form-control {
+    padding-right: 0;
+}

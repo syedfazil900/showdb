@@ -1,0 +1,38 @@
+{% extends 'base.html' %} {% block header%}
+<h1 class="text-center heading">{{id}}</h1>
+
+{%endblock%} {% block title%}{{id}} {%endblock%} {% block content%} {% if id !=
+"Popular Shows"%}
+<div class="container-fluid"></div>
+{%endif%}
+<div class="container-fluid">
+  <div class="row m-lg-4 m-md-5" id="movie">
+    {% for result in props %} {%if result.poster_path%}
+    <div class="col-lg-4 col-sm-12 image-col text-center" id="{{result.id}}">
+      {%if result.type=="tv" or type=="tv"%}
+      <a
+      href="/show/{{result.id}}"
+      >
+      {%else%}
+      <a
+      href="/movie/{{result.id}}"
+       >
+       {%endif%}
+       <img
+          src="http://image.tmdb.org/t/p/w500{{result.poster_path}}"
+          alt=""
+          loading="lazy"
+          class="image img-fluid p-4"
+        />
+        {% if result.original_title%}
+        <h6 class="title-text">{{result.original_title}}</h6>
+        {% else %}
+        <h6 class="title-text">{{result.name}}</h6>
+        {%endif%}
+      </a>
+    </div>
+    {%endif%} {% endfor %}
+  </div>
+</div>
+
+{%endblock%}

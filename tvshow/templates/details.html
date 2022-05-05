@@ -1,0 +1,35 @@
+{% extends 'base.html' %} {% block content%}
+<div class="container-fluid id" id="{{id}}" name="{{name}}">
+  <div class="row poster show-poster text-center my-2">
+    <img src="http://image.tmdb.org/t/p/w500{{result.poster_path}}" alt="" class="img-fluid show-img img mx-auto">
+    <h2 class="show-text">
+          {% if result.original_title%}
+          {{result.original_title}}
+          {% else %}
+          {{result.name}}
+          {%endif%}
+        </h2>
+        <p class="tagline">{{result.tagline}}</p>
+  </div>
+  <div class="row info">
+    <p class="blockquote summary about-section">{{result.overview}}</p>
+    <div class="container cast-section">
+      <h2 class="text-center cast-text">Cast</h2>
+      <div class="row casts">
+        {% for result in casts %}
+        {%if result.profile_path%}
+        <div class="image-col text-center col-lg-4 col-sm-12">
+          <a href="../people/{{result.original_name}}">
+            <img src="https://image.tmdb.org/t/p/w500/{{result.profile_path}}" alt="" loading="lazy" class="img-fluid image p-4">
+            <h6 class="name">{{result.original_name}}</h6>
+            <p class="character">{{result.character}}</p>
+          </a>
+        </div>
+        {%endif%}
+        {%endfor%}
+      </div>
+    </div>
+  </div>
+  </div>
+</div>
+{%endblock%}

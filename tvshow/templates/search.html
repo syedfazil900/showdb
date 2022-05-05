@@ -1,0 +1,8 @@
+{% extends 'base.html' %} {% block header%}
+<h1 class="text-center mt-3">Search results for "{{name}}"</h1>
+
+{%endblock%} {% block title%}{{name}} {%endblock%} {% block content%}
+<div class="container-fluid">
+  <div class="row m-lg-4 m-md-5 searchPage" id="{{name}}"></div>
+</div>
+{%endblock%}

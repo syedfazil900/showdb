@@ -1,0 +1,18 @@
+{% extends 'base.html' %} {% block content%}
+<div class="container-fluid person-id" name="{{name}}">
+  {% for person in persons %}
+    <div class="row person-poster text-center my-2">
+      <img src="https://image.tmdb.org/t/p/w500/{{person.profile_path}}" alt="" class="img-fluid person-img mx-auto">
+      <h2 class="name-text">{{person.name}}</h2>
+    </div>
+    {%endfor%}
+  <div class="row person-info">
+    <div class="about-section blockquote bio">
+
+      {{details.biography}}
+    </div>
+  </div>
+  </div>
+</div>
+
+{%endblock%}
